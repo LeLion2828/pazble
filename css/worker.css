@@ -1,0 +1,57 @@
+body{
+	/*background-color: rgb(19,102,143);*/
+	font-family: 'Poppins', sans-serif;
+	color: white;
+
+}
+
+.pazlelogoworker{
+
+	/*color: white;*/
+	font-size: 35px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+/*.footerbg{
+	color: white;
+}
+
+/*
+#outputList,#outputSearch{
+	color:white;
+}*/
+
+
+.namefont{
+
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+
+}
+
+
+.messageStyle{
+
+	padding: 2 px;
+	color:#000000;
+	width: 90%;
+}
+
+
+
+@media screen and (min-width: 740px) 
+{
+  .hideme{
+  	display: none;
+  }
+
+}
+
+@media screen and (max-width: 740px) 
+{
+   .showme{
+   	display: none;
+   }
+}

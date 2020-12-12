@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twilio/sdk": "^5.42",
+        "facebook/graph-sdk": "^5.7"
+    }
+}

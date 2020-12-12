@@ -1,0 +1,328 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	overflow-x: hidden;
+}
+
+
+.wrapper{
+	margin: 0 auto;
+	width:1000px;
+}
+
+.pazlogo{
+	font-size: 35px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: rgb(19,102,143);
+	padding-top: 2.2%;
+}
+
+.loginpaz{
+	box-shadow: 1px 1px 4px grey;
+	border-radius: 10px;
+	margin-bottom: 1.3%;
+	margin-top: 0.5%; 
+}
+
+.main1{
+	background-color: #13668f;
+}
+
+.logpaz{
+	font-size: 13px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: rgb(19,102,143);
+}
+
+.logininput1{
+	font-size:15px;
+	border-radius: 4px;
+	box-shadow: 1px 0px 4px black;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	width: 90%;
+	outline:none; 
+}
+
+
+.loginBtn1{
+	font-size:15px;
+	border-radius: 7px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	box-shadow: 1px 0px 4px black;
+
+}
+
+.forgotpwd{
+
+	font-size: 13px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+	color: rgb(19,102,143);
+}
+
+main{  
+	background-color: #13668f !important;
+}
+
+
+.pazword{
+
+	font-size: 80px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: white;
+	line-height: 102px;  /*09/11/2020*/
+	padding-bottom: 4.5%;
+	margin-bottom: -1%;
+}
+
+
+.spacing{
+	height: 3px;
+}
+
+.textregister{
+
+	font-size: 25px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: white;
+
+}
+
+.formbox{
+	padding: 3%;
+	border-radius:10px;
+	box-shadow: 1px 0px 4px black;
+	margin: -16px -15px 0px -15px;
+}
+
+.registerinput1,.registerinput2{
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	border-radius: 5px;
+	box-shadow: 1px 0px 2px black;
+	padding: 3%;
+	width: 95% !important; 
+	color: black;
+	margin-bottom: 5%;
+	outline:none; 
+}
+
+.registerinput2{
+	color: #91CFED !important;
+}
+
+option{
+	color: black;
+}
+
+::placeholder{
+	color: #91CFED;
+	padding-left: 2%;
+}
+
+.registerinput,.registerinput2{
+	width: 96% !important; 
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	border-radius: 5px;
+	box-shadow: 1px 0px 2px black; 
+}
+
+.registerBtn{
+	margin-bottom: -6%;
+	width: 98%;
+	border: 0px;
+	outline: none;
+}
+
+.registerBtn:hover{
+
+	background-color: black;
+	border: 1px solid black;
+}
+
+
+.blackbar{
+	background-color: black;
+	height: 12px; 
+	margin-top: -3%;
+}
+/*#13668f*/
+.bluebar{
+		background-color: #13668f;
+
+	height: 2px;
+}
+
+
+.aboutus{
+	color: white;
+	font-style: italic;
+	background-color: black;
+		font-weight: 200;
+		font-size:13px;
+
+}
+
+.hirepaz{
+
+	font-size: 55px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: lightblue;
+	margin-top: -2%;
+}
+
+.policy{
+
+	font-size: 12px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+	color: white;
+}
+
+
+.gethired{
+	font-size: 90px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	color: black;		
+	margin-top: 1%;
+}
+
+.language{
+	background-color: black;
+	color:white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: lighter;
+}
+
+.footerpaz{
+	font-family: 'Poppins', sans-serif;
+	margin-left: 2%;
+}
+
+
+.editimage{
+	padding-top: 4%;
+	width: 94%;
+	padding-left: 4%;
+}
+
+.registernote{
+	padding-left: 4%;
+}
+
+.editimage1{
+	width: 40%;
+	margin-right: 7%;
+}
+
+.editimage2{
+	width: 40%;
+	height:8% !important;
+}
+
+#form1{
+	display: none;
+}
+
+.photo1{
+	width: 40%;
+	margin-right: 14%;
+}
+
+.photo2{
+	width: 42%;
+	height: 3%;
+}
+
+/*for display output*/
+
+#output1{
+
+	font-size: 15px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	color: rgb(19,102,143);
+}
+
+
+#output2{
+
+	font-size: 15px;
+	text-align: justify;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	color: rgb(19,102,143);
+
+}
+
+#output3{
+
+	font-size: 15px;
+	text-align: justify;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	color: rgb(19,102,143);
+
+}
+
+.intelitegen{
+	letter-spacing: 1.5px;
+	font-weight: number;
+}
+
+
+.wrapperfooter{
+	margin: 0 auto;
+	width:1000px;
+}
+
+.posting{
+
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	border-radius: 5px;
+	box-shadow: 1px 0px 2px black;
+
+}
+
+.pazdou{
+	color: rgb(19,102,143);
+}
+
+
+.title{
+	font-size: 15px;
+	font-weight: 600;
+	color: rgb(19,102,143);
+}
+
+
+@media screen and (min-width: 740px)
+{
+	.hideme{
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 740px)
+{
+	.showme{
+		display: none;
+	}
+}
+
+

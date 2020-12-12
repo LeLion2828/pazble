@@ -1,0 +1,248 @@
+#speakupBox{
+	background-color: rgb(19,102,143);
+	width: 100%;
+	height: 150px;
+}
+
+#speaker-two{
+	background-color: white;
+	margin: 0px auto;
+	width: 96%;
+	height: 100px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px black;
+	padding-bottom: 5px;
+}
+
+
+#whatupPic{
+	border-radius: 50%;
+	width: 100px;
+	height: 90px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.button-style{
+	background-color: white;
+	color: rgb(19,102,143);
+	border-radius: 6px;
+	box-shadow: 2px 2px 2px black;
+	width: 180px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.button-style:hover{
+	box-shadow: 1px 1px 1px 1px #000;
+	background-color: rgb(19,102,143);
+	color: rgb(19,102,142);
+}
+
+#whatup{
+	background-color: rgb(19,102,143);
+	height: 75%;
+	color: white;
+}
+
+#Profpic{
+	width: 80px;
+	height: 90px;
+	/*margin-bottom: 427px;*/
+	float: left;
+}
+
+
+.textStyle{
+	height: 250px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	color: rgb(19,102,143);
+}
+
+#postme{
+	float: right;
+	margin-right: 17px;
+	background-color: #1e90c8;
+	color:white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px black;
+	width: 180px;
+	font-size: 20px;
+}
+
+#postme:hover{
+	opacity: 0.8;
+}
+
+
+::-webkit-input-placeholder {
+    color: rgb(19,102,143);
+    text-align: center;
+}
+:-moz-placeholder {
+     Firefox 18- 
+    color: rgb(19,102,143);
+    text-align: center;
+}
+::-moz-placeholder {
+     Firefox 19+ 
+    color: rgb(19,102,143);
+    text-align: center;
+}
+:-ms-input-placeholder {
+    color: rgb(19,102,143);
+    text-align: center;
+}
+
+#theChat{
+
+	border: 1px solid #207097;
+	box-shadow: 1px 2px 3px black;
+}
+
+#coments{
+	font-size: 20px;
+	color: rgb(19,102,143);
+}
+
+#workercoments{
+	font-size: 20px;
+}
+
+.name{
+	color: rgb(19,102,143);
+}
+
+.nameWorker{
+	color: #000;
+}
+
+#replied{
+	margin-left: 20px;
+	text-align: justify;
+}
+
+#imgChat{
+	margin-left: 20px;
+
+}
+
+.topo{
+
+	width: 18%;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px black;
+	background-color: #c14748;
+	color: white;
+}
+
+.share{
+
+	width: 18%;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px black;
+	background-color: #207097;
+	color: white;
+}
+
+
+.topo:hover,.share:hover{
+	color: white;
+	box-shadow: 1px 2px 3px black;
+}
+
+/*.share:hover{
+
+	color: white;
+	box-shadow: 1px 2px 3px black;
+
+}
+*/
+
+#logo{
+	height: 60px;
+	background-color: white;
+}
+
+.logo-nav{
+	color: rgb(19,102,143);
+	font-size: 35px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+
+.red{
+      color: #c14748 !important;
+ }
+
+ .number{
+ 	color: #c14748 !important;
+ 	float: left;
+ }
+
+ .number-worker{
+
+ 	/*color: #c14748 !important;*/
+ 	float: left;
+
+ }
+
+
+#shareThought::placeholder{
+	color: #96d1ee;
+	text-align: left;
+}
+
+#shareThought{
+	box-shadow: 2px 2px 2px black;
+	border-radius: 7px;
+	height: 35px;
+	width: 70%;
+}
+
+
+.replying{
+
+	color: #207097;
+	border-radius: 5px;
+	box-shadow: 1px 2px 3px black;
+	font-weight: 600;
+	width: 20%;
+	height: 35px;
+
+}
+
+.textClose{
+	float: right;
+	display: block;
+	padding-bottom: 10px;
+}
+
+#text-chat-box{
+	margin: 0 auto;
+	width:80%;
+}
+
+
+.modal a.close-modal{
+	display: none;
+}
+
+
+.pazblehead{
+  padding: 20px;
+}
+
+.replyingWorker{
+	color: rgb(19,102,143);
+	background-color: white;
+}
+
+#speakText{
+	font-family: 'Poppins', sans-serif;
+	font-size: 19px;
+	font-weight: 600;
+}
+
