@@ -12,6 +12,7 @@ use Twilio\Rest\Client;
 
 require('db_config.php');
 
+
 if( !empty($_POST) )
 {
   $FirstName = mysqli_real_escape_string($conn,$_POST['Fname']);
@@ -85,7 +86,7 @@ if( !empty($_POST) )
               $password= password_hash($pass, PASSWORD_DEFAULT);//hash password
 
 
-               function RandomString($length) 
+               function RandomString($length)
       {
           $randstr = '';
           srand((double) microtime(TRUE) * 1000000);
@@ -93,10 +94,10 @@ if( !empty($_POST) )
           $chars = array(
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p',
             'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5',
-            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
+            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 
-          for ($rand = 0; $rand <= $length; $rand++) 
+          for ($rand = 0; $rand <= $length; $rand++)
           {
               $random = rand(0, count($chars) - 1);
               $randstr .= $chars[$random];
@@ -127,21 +128,21 @@ if( !empty($_POST) )
                 mysqli_stmt_execute($stmt);
 
                 // Your Account SID and Auth Token from twilio.com/console
-                $sid = 'AC1be9ac991da20dab30bd7b3d22df4127';
-                $token = '59ae4b500380ac4bb753dcac93b104e1';
-                $client = new Client($sid, $token);
+                // $sid = 'AC1be9ac991da20dab30bd7b3d22df4127';
+                // $token = '59ae4b500380ac4bb753dcac93b104e1';
+                // $client = new Client($sid, $token);
 
-                // Use the client to do fun stuff like send text messages!
-                $client->messages->create(
-                  // the number you'd like to send the message to
-                  $countryCode.$mobile,
-                  [
-                    // A Twilio phone number you purchased at twilio.com/console
-                    'from' => '+12055284823',
-                    // the body of the text message you'd like to send
-                    'body' => 'Verification Code:'.$randomNumber
-                  ]
-                );
+                // // Use the client to do fun stuff like send text messages!
+                // $client->messages->create(
+                //   // the number you'd like to send the message to
+                //   $countryCode.$mobile,
+                //   [
+                //     // A Twilio phone number you purchased at twilio.com/console
+                //     'from' => '+12055284823',
+                //     // the body of the text message you'd like to send
+                //     'body' => 'Verification Code:'.$randomNumber
+                //   ]
+                // );
 
                 header("Location: verify.php");
                 exit();

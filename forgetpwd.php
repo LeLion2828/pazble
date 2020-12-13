@@ -46,7 +46,7 @@ if(!empty($_POST))
            $_SESSION['checkPhone'] = $rowCheck['phone'];
 
 
-           function RandomString($length) 
+           function RandomString($length)
       {
           $randstr = '';
           srand((double) microtime(TRUE) * 1000000);
@@ -54,10 +54,10 @@ if(!empty($_POST))
           $chars = array(
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p',
             'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5',
-            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
+            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
             'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 
-          for ($rand = 0; $rand <= $length; $rand++) 
+          for ($rand = 0; $rand <= $length; $rand++)
           {
               $random = rand(0, count($chars) - 1);
               $randstr .= $chars[$random];
@@ -128,7 +128,7 @@ if(!empty($_POST))
               exit();
         }
   }
-  
+
 }
 
 ?>
@@ -146,16 +146,19 @@ if(!empty($_POST))
 
     <link rel="stylesheet" href="css/allnicepage.css" media="screen">
     <link rel="stylesheet" href="css/forgotpassword.css" media="screen">
-
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+        <script class="u-script" type="text/javascript" src="js/forgetpwd.js" defer=""></script>
+            <script class="u-script" type="text/javascript" src="bootstrap/bootstrap.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="bootstrap/popper.min.js" defer=""></script>
   <!--   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 3.1.0, nicepage.com">
-   
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
-    
-    
-    
+
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -227,15 +230,15 @@ if(!empty($_POST))
         <h6 class="u-custom-font u-text u-text-white u-text-5">About Us</h6>
       </div>
     </section>
-    
-    
+
+
     <footer class="u-align-left u-clearfix u-footer u-white u-footer" id="sec-81b3"><div class="u-clearfix u-sheet u-sheet-1">
         <img src="images/Logo1G.webp" alt="" class="u-image u-image-default u-preserve-proportions u-image-1" data-image-width="112" data-image-height="18">
         <p class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">© 2020 by pazblé</p>
         <p class="u-custom-font u-font-open-sans u-text u-text-custom-color-3 u-text-default u-text-2">Made in Mauritius.</p>
         <img src="images/mflag.png" alt="" class="u-image u-image-default u-image-2" data-image-width="400" data-image-height="267">
       </div></footer>
-<!-- 
+<!--
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
         <span>HTML Templates</span>
@@ -245,8 +248,30 @@ if(!empty($_POST))
       </p>
       <a class="u-link" href="https://nicepage.com/" target="_blank">
         <span>Website Builder Software</span>
-      </a>. 
+      </a>.
     </section> -->
-    
+
+        <!---- START VALIDATION CORRECTIONS [ PILLS & SKY ] ---->
+        <button type="button" class="btn btn-primary" id="trigger_form_forget_modal" data-toggle="modal" data-target="#form_forget_modal" style="display:none;"></button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="form_forget_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                </div>
+              </div>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="clear_input_register">Understood</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- END -->
+
   </body>
 </html>

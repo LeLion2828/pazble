@@ -13,14 +13,21 @@
 
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="pazblé.css" media="screen">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" media="screen">
 
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="bootstrap/bootstrap.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="bootstrap/popper.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
+
+
    <!--  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 3.1.0, nicepage.com">
 
-        
-    
-    
+
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -59,7 +66,7 @@
                 <div class="u-form-group u-form-submit">
 
                   <input type='submit' class="u-btn u-btn-round u-btn-submit u-button-style u-hover-custom-color-2 u-radius-7 u-text-white u-btn-1" value="LOG IN">
-                  
+
                  <!--  <input type="submit" value="submit" class="u-form-control-hidden"> -->
                 </div>
 
@@ -85,16 +92,16 @@
             <h6 class="u-custom-font u-font-open-sans u-text u-text-default u-text-2">It's free and simple!</h6>
             <div class="u-form u-form-1">
 
-              <form action="validate.php" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="form">
+              <form action="validate.php" name="form_register" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="form">
 
                 <div class="u-form-group u-form-name u-form-partition-factor-2">
                   <label for="name-6797" class="u-custom-font u-form-control-hidden u-label u-label-1">Name</label>
-                  <input type="text" id="name-6797" name="Fname" class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-1" required="" placeholder="First Name">
+                  <input type="text" id="name-6797" name="Fname" data-type="username" data-error = "Invalid first name" data-input-validation=true class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-1" placeholder="First Name">
                 </div>
 
                 <div class="u-form-email u-form-group u-form-partition-factor-2">
                   <label for="email-6797" class="u-custom-font u-form-control-hidden u-label u-label-2">Email</label>
-                  <input type="text" placeholder="Last Name" id="email-6797" name="Lname" class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-2" required="">
+                  <input type="text" placeholder="Last Name" id="email-6797" name="Lname" data-type="username" data-error= "Invalid last name" data-input-validation=true class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-2">
                 </div>
 
 
@@ -113,25 +120,25 @@
 
                 <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
                   <label for="text-1361" class="u-custom-font u-form-control-hidden u-label u-label-4"></label>
-                  <input type="text" placeholder="Mobile Number" id="text-1361" name="phone" class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-4">
+                  <input type="text" placeholder="Mobile Number" id="text-1361" name="phone" data-type = "phone" data-error="Invalid phone format"  data-input-validation=true class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-4">
                 </div>
 
 
                 <div class="u-form-group u-form-partition-factor-2 u-form-group-5">
                   <label for="text-fc4b" class="u-custom-font u-form-control-hidden u-label u-label-5"></label>
-                  <input type="password" id="text-fc4b" name="pwd" class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-5" placeholder="New Password">
+                  <input type="password" id="text-fc4b" name="pwd" data-type="password" data-error="Invalid password format" data-input-validation=true class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-5" placeholder="New Password">
                 </div>
 
 
                 <div class="u-form-group u-form-partition-factor-2 u-form-group-6">
                   <label for="text-852d" class="u-custom-font u-form-control-hidden u-label u-label-6"></label>
-                  <input type="password" placeholder="Confirm Password" id="text-852d" name="conpwd" class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-6">
+                  <input type="password" placeholder="Confirm Password" id="text-852d" name="conpwd" data-type="confirm_password" data-error="Password don't match" data-input-validation=true class="u-border-1 u-border-custom-color-2 u-custom-font u-input u-input-rectangle u-radius-5 u-text-custom-color-5 u-white u-input-6">
                 </div>
 
 
                 <div class="u-align-center-lg u-align-center-md u-align-center-sm u-align-left-xl u-align-left-xs u-form-group u-form-submit">
 
-                  <input type="submit" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-3 u-custom-font u-hover-black u-radius-5 u-text-hover-white u-btn-1" value="REGISTER">
+                  <input type="button" name="form_register_submit" class="u-btn u-btn-round u-btn-submit u-button-style u-custom-color-3 u-custom-font u-hover-black u-radius-5 u-text-hover-white u-btn-1" value="REGISTER">
                 <!--   <input type="submit" value="submit" class="u-form-control-hidden"> -->
                 </div>
 
@@ -170,14 +177,35 @@
         <a href="https://nicepage.com/static-site-generator" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-none u-text-white u-btn-5">About Us</a>
       </div>
     </section>
-    
-    
+
+
     <footer class="u-align-left u-clearfix u-footer u-white u-footer" id="sec-81b3"><div class="u-clearfix u-sheet u-sheet-1">
         <img src="images/Logo1G.webp" alt="" class="u-image u-image-default u-preserve-proportions u-image-1" data-image-width="112" data-image-height="18">
         <p class="u-custom-font u-font-open-sans u-text u-text-default u-text-1">© 2020 by pazblé</p>
         <p class="u-custom-font u-font-open-sans u-text u-text-custom-color-3 u-text-default u-text-2">Made in Mauritius.</p>
         <img src="images/mflag.png" alt="" class="u-image u-image-default u-image-2" data-image-width="400" data-image-height="267">
       </div></footer>
-    
+
+    <!---- START VALIDATION CORRECTIONS [ PILLS & SKY ] ---->
+        <button type="button" class="btn btn-primary" id="trigger_form_register_modal" data-toggle="modal" data-target="#form_register_modal" style="display:none;"></button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="form_register_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                </div>
+              </div>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="clear_input_register">Understood</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- END -->
   </body>
 </html>

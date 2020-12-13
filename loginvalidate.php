@@ -62,15 +62,20 @@ if(!empty($_POST))
 
             //retrieving the hashed password from database and storing in a variable
             $hashed_password = $row['password'];
-              
-            if(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == null )
+
+            if ((password_verify($passlog, $hashed_password)) == false){
+            header("Location: index.php?log=error");
+
+            }
+
+            elseif(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == null )
             {
-              
+
                 header("location:setup.php"); //redirect to
             }
             elseif(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == 'client')
             {
-              
+
                  header("location:newsfeedclient.php");
             }
             elseif(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == 'worker')
@@ -78,18 +83,18 @@ if(!empty($_POST))
 
                  header("location:newsfeedworker.php");
             }
-           
+
         }
         else
         {
 
           header("Location: index.php?log=error");
           exit();
-           
+
         }
 
     }
-            
+
   		}
 
   	}
