@@ -127,22 +127,22 @@ if( !empty($_POST) )
                 //run parameters inside database
                 mysqli_stmt_execute($stmt);
 
-                // Your Account SID and Auth Token from twilio.com/console
-                // $sid = 'AC1be9ac991da20dab30bd7b3d22df4127';
-                // $token = '59ae4b500380ac4bb753dcac93b104e1';
-                // $client = new Client($sid, $token);
+                //Your Account SID and Auth Token from twilio.com/console
+                $sid = 'AC1be9ac991da20dab30bd7b3d22df4127';
+                $token = 'fa268502dbc40f51611cb4ebabbdc6f7';
+                $client = new Client($sid, $token);
 
-                // // Use the client to do fun stuff like send text messages!
-                // $client->messages->create(
-                //   // the number you'd like to send the message to
-                //   $countryCode.$mobile,
-                //   [
-                //     // A Twilio phone number you purchased at twilio.com/console
-                //     'from' => '+12055284823',
-                //     // the body of the text message you'd like to send
-                //     'body' => 'Verification Code:'.$randomNumber
-                //   ]
-                // );
+                // Use the client to do fun stuff like send text messages!
+                $client->messages->create(
+                  // the number you'd like to send the message to
+                  $countryCode.$mobile,
+                  [
+                    // A Twilio phone number you purchased at twilio.com/console
+                    'from' => '+12055284823',
+                    // the body of the text message you'd like to send
+                    'body' => 'Verification Code:'.$randomNumber
+                  ]
+                );
 
                 header("Location: verify.php");
                 exit();

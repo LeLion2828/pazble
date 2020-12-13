@@ -81,7 +81,9 @@ include ('clientheader.php');
       $timeonrecord = $row['posted_time'];
 
       $time = strtotime($timeonrecord);
-      $raters_count = count(json_decode($row['raters'], true));
+
+      $json_raters= json_decode($row['raters'], true);
+      $raters_count = empty($json_raters)?0:count($json_raters);
 
       echo "<div id='theChat'>";
 

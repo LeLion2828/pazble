@@ -39,6 +39,7 @@ $(document).ready(function(){
     const log = urlParams.get('log');
     const login = urlParams.get('login');
     const phone = urlParams.get('phone');
+    const check = urlParams.get('check');
 
     if(log == 'error'){
         $('#form_register_modal').find('.modal-body').children().remove();
@@ -60,6 +61,13 @@ $(document).ready(function(){
         $(p_node).text(" + " + 'Invalid Format for Phone Number');
         $('#form_register_modal').find('.modal-body').append(p_node);
         $('#trigger_form_register_modal').click();
+    }
+    if(check == 'success'){
+        $('#form_success_modal').find('.modal-body').children().remove();
+        var p_node = document.createElement("p");
+        $(p_node).text(" + " + 'You have successfully registered');
+        $('#form_success_modal').find('.modal-body').append(p_node);
+        $('#trigger_form_success_modal').click();
     }
 });
 
