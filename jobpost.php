@@ -6,6 +6,7 @@ require('db_config.php');
 
 $user = $_SESSION['user_id'] ;
 
+var_dump(!empty($_POST));
 if(!empty($_POST))
 {
 	$title = mysqli_real_escape_string($conn,$_POST['title']);

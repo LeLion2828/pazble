@@ -43,13 +43,8 @@ include ('clientheader.php');
   </div>
 
 
+  <div class="container-fluid" id="output1" style="display:flex; justify-content: space-around;"></div>
     <!-- two div below finishing -->
-  </div>
-
-  <div class="col-md-3 text-left">
-
-    <p id="output1"></p>
-
   </div>
 
 </div>
@@ -85,24 +80,56 @@ function val()
       //convert text into a JavaScript object:
       //Make sure the text is written in JSON format, or else you will get a syntax error.
       var myObj = JSON.parse(this.responseText);
-
-
+      var data_threshold = myObj.data.length;
+      var column_limit = 3;
       var result="";
 
-      for (x in myObj.data)
-      {
+      console.log(myObj);
+      for(var i = data_threshold; i > 0; i--){
+        var row_node = document.createElement("div");
+        $(row_node).addClass("row");
 
-        document.getElementById("output1").innerHTML =
-        result +=
-        "<b>Title : </b> "+myObj.data[x].title+
-        "<br/><b> Boss Name : </b>"+myObj.data[x].Firstname+" "+myObj.data[x].Lastname+
-        " <br/><b> Description : </b> " + myObj.data[x].Description+
-        "<br/><b> Address : </b>"+myObj.data[x].Address+
-        "<br/><b> Job Posted : </b>"+myObj.data[x].date_posted+
-        "<br/><b> Status : </b>"+myObj.data[x].Status+
-        "</b><br/><br/>";
+        for(var o = 0; o < column_limit; o++){
+           var div_node = document.createElement("div");
+           var title_node = document.createElement("p");
+           var boss_node = document.createElement("p");
+           var description_node = document.createElement("p");
+           var address_node = document.createElement("p");
+           var job_node = document.createElement("p");
+           var status_node = document.createElement("p");
 
+           $(title_node).text(myObj.data[i - 1].title);
+           $(boss_node).text(myObj.data[i - 1].Firstname+" "+myObj.data[i - 1].Lastname);
+           $(description_node).text(myObj.data[i - 1].Description);
+           $(address_node).text(myObj.data[i - 1].Address);
+           $(job_node).text(myObj.data[i - 1].date_posted);
+           $(status_node).text(myObj.data[i - 1].Status == 0?"Unavailable":"Available");
+
+           $(div_node).append(title_node).append(boss_node).append(description_node).append(address_node).append(job_node).append(status_node);
+           $(div_node).addClass("col-md-4");
+           $(row_node).append(div_node);
+
+           i--;
+        }
+
+        $("#output1").append(row_node);
       }
+
+      // console.log(myObj);
+      // for (x in myObj.data)
+      // {
+
+      //   document.getElementById("output1").innerHTML =
+      //   result +=
+      //   "<b>Title : </b> "+myObj.data[x].title+
+      //   "<br/><b> Boss Name : </b>"+myObj.data[x].Firstname+" "+myObj.data[x].Lastname+
+      //   " <br/><b> Description : </b> " + myObj.data[x].Description+
+      //   "<br/><b> Address : </b>"+myObj.data[x].Address+
+      //   "<br/><b> Job Posted : </b>"+myObj.data[x].date_posted+
+      //   "<br/><b> Status : </b>"+myObj.data[x].Status+
+      //   "</b><br/><br/>";
+
+      // }
 
 
     }

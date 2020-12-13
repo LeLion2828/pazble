@@ -10,7 +10,7 @@ if(!empty($_POST['message']))
 {
     $_SESSION['message'] = $_POST['message'];
 
-    $message = mysqli_real_escape_string($conn,$_POST['message']); 
+    $message = mysqli_real_escape_string($conn,$_POST['message']);
     $today = date("F j, Y, g:i a");
 
     $sql = "INSERT INTO happenings(comments,posted_time,user_id) VALUES (?,?,?)";
@@ -27,7 +27,7 @@ if(!empty($_POST['message']))
                 //bind the parameters to the placeholder
                 mysqli_stmt_bind_param($stmt, "ssi", $message,$today,$user);
                 //run parameters inside database
-                mysqli_stmt_execute($stmt); 
+                mysqli_stmt_execute($stmt);
 
        //          header("Location: client.php?happen=update");
     			// exit();

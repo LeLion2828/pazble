@@ -10,7 +10,7 @@ $today = date("F j, Y, g:i a");
 
 if(!empty($_POST))
 {
-  
+
   $reply = mysqli_real_escape_string($conn,$_POST['reply']);
   $hapen_id = mysqli_real_escape_string($conn,$_POST['hapen_id']);
 
