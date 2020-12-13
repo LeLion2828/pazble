@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 13, 2020 at 10:08 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: Dec 13, 2020 at 09:15 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,15 +28,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `acceptingbid`
 --
 
-DROP TABLE IF EXISTS `acceptingbid`;
-CREATE TABLE IF NOT EXISTS `acceptingbid` (
-  `AcceptingBid_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `acceptingbid` (
+  `AcceptingBid_id` int(11) NOT NULL,
   `bid_id` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`AcceptingBid_id`),
-  KEY `bid_id` (`bid_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `acceptingbid`
@@ -51,18 +47,13 @@ INSERT INTO `acceptingbid` (`AcceptingBid_id`, `bid_id`, `user_id`) VALUES
 -- Table structure for table `biding`
 --
 
-DROP TABLE IF EXISTS `biding`;
-CREATE TABLE IF NOT EXISTS `biding` (
-  `bid_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `biding` (
+  `bid_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `job_id` int(11) DEFAULT NULL,
   `bid_price` varchar(200) DEFAULT NULL,
-  `postjob_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`bid_id`),
-  UNIQUE KEY `bid_unique` (`user_id`,`job_id`,`postjob_id`),
-  KEY `job_id` (`job_id`),
-  KEY `postjob_id` (`postjob_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `postjob_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `biding`
@@ -77,16 +68,12 @@ INSERT INTO `biding` (`bid_id`, `user_id`, `job_id`, `bid_price`, `postjob_id`) 
 -- Table structure for table `boss_post_job`
 --
 
-DROP TABLE IF EXISTS `boss_post_job`;
-CREATE TABLE IF NOT EXISTS `boss_post_job` (
-  `postjob_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `boss_post_job` (
+  `postjob_id` int(11) NOT NULL,
   `job_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `date_posted` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`postjob_id`),
-  KEY `job_id` (`job_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `date_posted` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `boss_post_job`
@@ -105,16 +92,12 @@ INSERT INTO `boss_post_job` (`postjob_id`, `job_id`, `user_id`, `date_posted`) V
 -- Table structure for table `followsystem`
 --
 
-DROP TABLE IF EXISTS `followsystem`;
-CREATE TABLE IF NOT EXISTS `followsystem` (
-  `followsystem_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `followsystem` (
+  `followsystem_id` int(11) NOT NULL,
   `user_id_follow` int(11) DEFAULT NULL,
   `user_id_follower` int(11) DEFAULT NULL,
-  `status_follow` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`followsystem_id`),
-  KEY `user_id_follow` (`user_id_follow`),
-  KEY `user_id_follower` (`user_id_follower`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `status_follow` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `followsystem`
@@ -129,16 +112,12 @@ INSERT INTO `followsystem` (`followsystem_id`, `user_id_follow`, `user_id_follow
 -- Table structure for table `forgetpwds`
 --
 
-DROP TABLE IF EXISTS `forgetpwds`;
-CREATE TABLE IF NOT EXISTS `forgetpwds` (
-  `forgetpwd_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `forgetpwds` (
+  `forgetpwd_id` int(11) NOT NULL,
   `mobile_num` varchar(200) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `code` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`forgetpwd_id`),
-  UNIQUE KEY `mobile_num` (`mobile_num`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `code` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forgetpwds`
@@ -153,16 +132,13 @@ INSERT INTO `forgetpwds` (`forgetpwd_id`, `mobile_num`, `user_id`, `code`) VALUE
 -- Table structure for table `happenings`
 --
 
-DROP TABLE IF EXISTS `happenings`;
-CREATE TABLE IF NOT EXISTS `happenings` (
-  `hapen_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `happenings` (
+  `hapen_id` int(11) NOT NULL,
   `comments` varchar(255) DEFAULT NULL,
   `posted_time` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `raters` text,
-  PRIMARY KEY (`hapen_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  `raters` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `happenings`
@@ -174,12 +150,18 @@ INSERT INTO `happenings` (`hapen_id`, `comments`, `posted_time`, `user_id`, `rat
 (3, 'ggggggg', 'December 12, 2020, 4:10 pm', 1, NULL),
 (4, 'tttttt', 'December 12, 2020, 4:10 pm', 1, NULL),
 (5, 'koko', 'December 12, 2020, 4:10 pm', 1, NULL),
-(6, 'pokli', 'December 12, 2020, 4:12 pm', 1, NULL),
+(6, 'pokli', 'December 12, 2020, 4:12 pm', 1, '{\"1\":1}'),
 (7, 'tgigig', 'December 12, 2020, 4:13 pm', 1, NULL),
-(8, 'asdasd', 'December 13, 2020, 12:34 am', 1, NULL),
-(9, 'dhello', 'December 13, 2020, 12:36 am', 1, NULL),
-(10, 'dhello', 'December 13, 2020, 12:37 am', 1, NULL),
-(11, 'test', 'December 13, 2020, 12:39 am', 1, '{\"1\":1}');
+(8, 'asdasd', 'December 13, 2020, 12:34 am', 1, '{\"1\":1}'),
+(9, 'dhello', 'December 13, 2020, 12:36 am', 1, '{\"1\":1}'),
+(10, 'dhello', 'December 13, 2020, 12:37 am', 1, '{\"1\":1}'),
+(11, 'test', 'December 13, 2020, 12:39 am', 1, '{\"1\":1}'),
+(12, '3r2r3', 'December 13, 2020, 1:46 pm', 1, '{\"1\":1,\"25\":25}'),
+(13, 'skyad', 'December 13, 2020, 5:51 pm', 1, '{\"25\":25}'),
+(14, '3e', 'December 13, 2020, 6:06 pm', 1, '{\"25\":25}'),
+(15, 'wdq', 'December 13, 2020, 6:10 pm', 1, '{\"1\":1,\"25\":25}'),
+(16, 'this is a test to met dan database', 'December 13, 2020, 6:11 pm', 1, '{\"1\":1,\"25\":25}'),
+(17, 'helo', 'December 13, 2020, 8:33 pm', 25, '{\"25\":25}');
 
 -- --------------------------------------------------------
 
@@ -187,15 +169,13 @@ INSERT INTO `happenings` (`hapen_id`, `comments`, `posted_time`, `user_id`, `rat
 -- Table structure for table `jobs`
 --
 
-DROP TABLE IF EXISTS `jobs`;
-CREATE TABLE IF NOT EXISTS `jobs` (
-  `job_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `jobs` (
+  `job_id` int(11) NOT NULL,
   `title` varchar(200) DEFAULT NULL,
   `Description` varchar(200) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
-  `Status` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `Status` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jobs`
@@ -216,24 +196,22 @@ INSERT INTO `jobs` (`job_id`, `title`, `Description`, `Address`, `Status`) VALUE
 -- Table structure for table `profiles`
 --
 
-DROP TABLE IF EXISTS `profiles`;
-CREATE TABLE IF NOT EXISTS `profiles` (
-  `profile_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `profiles` (
+  `profile_id` int(11) NOT NULL,
   `service` varchar(200) NOT NULL,
   `category` varchar(200) NOT NULL,
   `description` varchar(255) NOT NULL,
   `rate` varchar(255) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`profile_id`),
-  UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `profiles`
 --
 
 INSERT INTO `profiles` (`profile_id`, `service`, `category`, `description`, `rate`, `user_id`) VALUES
-(1, 'ttt', 'ttt', 'tttt', 'tttt', 3);
+(1, 'ttt', 'ttt', 'tttt', 'tttt', 3),
+(2, 'test', 'test', 'test', 'test', 25);
 
 -- --------------------------------------------------------
 
@@ -241,14 +219,11 @@ INSERT INTO `profiles` (`profile_id`, `service`, `category`, `description`, `rat
 -- Table structure for table `ratingworkers`
 --
 
-DROP TABLE IF EXISTS `ratingworkers`;
-CREATE TABLE IF NOT EXISTS `ratingworkers` (
-  `rate_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ratingworkers` (
+  `rate_id` int(11) NOT NULL,
   `worker_id` int(11) DEFAULT NULL,
-  `rating` int(11) DEFAULT NULL,
-  PRIMARY KEY (`rate_id`),
-  KEY `worker_id` (`worker_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `rating` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ratingworkers`
@@ -263,17 +238,13 @@ INSERT INTO `ratingworkers` (`rate_id`, `worker_id`, `rating`) VALUES
 -- Table structure for table `reply`
 --
 
-DROP TABLE IF EXISTS `reply`;
-CREATE TABLE IF NOT EXISTS `reply` (
-  `reply_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reply` (
+  `reply_id` int(11) NOT NULL,
   `reply_message` varchar(255) DEFAULT NULL,
   `hapen_id` int(11) DEFAULT NULL,
   `replyuserid` int(11) DEFAULT NULL,
-  `time_reply` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`reply_id`),
-  KEY `hapen_id` (`hapen_id`),
-  KEY `replyuserid` (`replyuserid`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+  `time_reply` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reply`
@@ -302,7 +273,17 @@ INSERT INTO `reply` (`reply_id`, `reply_message`, `hapen_id`, `replyuserid`, `ti
 (32, 'bonjor', 10, 1, 'December 13, 2020, 12:54 am'),
 (33, 'pills', 9, 1, 'December 13, 2020, 12:54 am'),
 (34, 'sava', 8, 1, 'December 13, 2020, 12:54 am'),
-(35, 'no sava pas', 7, 1, 'December 13, 2020, 12:54 am');
+(35, 'no sava pas', 7, 1, 'December 13, 2020, 12:54 am'),
+(36, '3e', 12, 1, 'December 13, 2020, 1:46 pm'),
+(37, 'wer ki dir', 11, 1, 'December 13, 2020, 8:08 pm'),
+(38, 'hello ', 16, 1, 'December 13, 2020, 8:09 pm'),
+(39, 'ki dir tou korek', 16, 1, 'December 13, 2020, 8:09 pm'),
+(40, 'oui tou korek', 15, 1, 'December 13, 2020, 8:09 pm'),
+(41, 'sinon korek', 14, 1, 'December 13, 2020, 8:09 pm'),
+(42, 'waa korek', 16, 25, 'December 13, 2020, 8:35 pm'),
+(43, 'soupe', 17, 25, 'December 13, 2020, 8:35 pm'),
+(44, '', 3, 1, 'December 13, 2020, 9:09 pm'),
+(45, 'hello pokki', 6, 1, 'December 13, 2020, 9:09 pm');
 
 -- --------------------------------------------------------
 
@@ -310,15 +291,12 @@ INSERT INTO `reply` (`reply_id`, `reply_message`, `hapen_id`, `replyuserid`, `ti
 -- Table structure for table `uploadproof`
 --
 
-DROP TABLE IF EXISTS `uploadproof`;
-CREATE TABLE IF NOT EXISTS `uploadproof` (
-  `uploadproof_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `uploadproof` (
+  `uploadproof_id` int(11) NOT NULL,
   `paths` varchar(255) DEFAULT NULL,
   `status_proof` tinyint(1) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`uploadproof_id`),
-  KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `uploadproof`
@@ -333,9 +311,8 @@ INSERT INTO `uploadproof` (`uploadproof_id`, `paths`, `status_proof`, `user_id`)
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
   `Firstname` varchar(200) NOT NULL,
   `Lastname` varchar(200) NOT NULL,
   `countryCode` varchar(10) NOT NULL,
@@ -344,11 +321,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `usertype` varchar(200) DEFAULT NULL,
   `gravatar` varchar(255) DEFAULT NULL,
   `verify_code` varchar(200) NOT NULL,
-  `status_check` tinyint(1) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `phone` (`phone`),
-  UNIQUE KEY `verify_code` (`verify_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+  `status_check` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -364,7 +338,179 @@ INSERT INTO `users` (`user_id`, `Firstname`, `Lastname`, `countryCode`, `phone`,
 (8, 'Ritish', 'tawa', '+230', '58061933', '$2y$10$cNQ6GHt6qLY6ZZK0FesWMuTBI9IA3qRJIGj2LPsdLCogNBJ0SP8qO', NULL, NULL, 't5cYZM', 1),
 (9, 'test', 'testa', '+230', '59796708', '$2y$10$vchgTWGD4DFJSexzYXYi.uCTMnbpw.kByN.B/ub4iBaYLiMxhUnD6', 'client', 'userpic/9/5fd448df802537.19865902.jpg', 'Zc6jpD', 1),
 (10, 'Test', 'T', '+230', '59366706', '$2y$10$sN4o37S06PiFRxrEJQV5r.HCLUM3eTqxAYHe.J/vv2WMNf9FJ2j3y', 'worker', 'userpic/10/5fd44d557fc563.24661318.png', '7zGFZu', 1),
-(24, 'pills', 'boi', '+230', '57871179', '$2y$10$qig7L7y7a6Oy.igIv2mn9.tfR2mjmt52U3jBB.dGAH2TRCtFu5j2C', NULL, NULL, 'na5rU6', 0);
+(24, 'pills', 'boi', '+230', '57871179', '$2y$10$qig7L7y7a6Oy.igIv2mn9.tfR2mjmt52U3jBB.dGAH2TRCtFu5j2C', NULL, NULL, 'na5rU6', 0),
+(25, 'sky', 'test', '+230', '59072057', '$2y$10$zQKiSs.sd6BiLoxE0DD.eeMYIwf64k6eQcwZHpfvWqXfInNm.Y5zO', 'client', 'userpic/3/5fc0b98fcb2077.71481031.jpg', 'iIPqhi', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `acceptingbid`
+--
+ALTER TABLE `acceptingbid`
+  ADD PRIMARY KEY (`AcceptingBid_id`),
+  ADD KEY `bid_id` (`bid_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `biding`
+--
+ALTER TABLE `biding`
+  ADD PRIMARY KEY (`bid_id`),
+  ADD UNIQUE KEY `bid_unique` (`user_id`,`job_id`,`postjob_id`),
+  ADD KEY `job_id` (`job_id`),
+  ADD KEY `postjob_id` (`postjob_id`);
+
+--
+-- Indexes for table `boss_post_job`
+--
+ALTER TABLE `boss_post_job`
+  ADD PRIMARY KEY (`postjob_id`),
+  ADD KEY `job_id` (`job_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `followsystem`
+--
+ALTER TABLE `followsystem`
+  ADD PRIMARY KEY (`followsystem_id`),
+  ADD KEY `user_id_follow` (`user_id_follow`),
+  ADD KEY `user_id_follower` (`user_id_follower`);
+
+--
+-- Indexes for table `forgetpwds`
+--
+ALTER TABLE `forgetpwds`
+  ADD PRIMARY KEY (`forgetpwd_id`),
+  ADD UNIQUE KEY `mobile_num` (`mobile_num`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `happenings`
+--
+ALTER TABLE `happenings`
+  ADD PRIMARY KEY (`hapen_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `jobs`
+--
+ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`profile_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `ratingworkers`
+--
+ALTER TABLE `ratingworkers`
+  ADD PRIMARY KEY (`rate_id`),
+  ADD KEY `worker_id` (`worker_id`);
+
+--
+-- Indexes for table `reply`
+--
+ALTER TABLE `reply`
+  ADD PRIMARY KEY (`reply_id`),
+  ADD KEY `hapen_id` (`hapen_id`),
+  ADD KEY `replyuserid` (`replyuserid`);
+
+--
+-- Indexes for table `uploadproof`
+--
+ALTER TABLE `uploadproof`
+  ADD PRIMARY KEY (`uploadproof_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `phone` (`phone`),
+  ADD UNIQUE KEY `verify_code` (`verify_code`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `acceptingbid`
+--
+ALTER TABLE `acceptingbid`
+  MODIFY `AcceptingBid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `biding`
+--
+ALTER TABLE `biding`
+  MODIFY `bid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `boss_post_job`
+--
+ALTER TABLE `boss_post_job`
+  MODIFY `postjob_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `followsystem`
+--
+ALTER TABLE `followsystem`
+  MODIFY `followsystem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `forgetpwds`
+--
+ALTER TABLE `forgetpwds`
+  MODIFY `forgetpwd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `happenings`
+--
+ALTER TABLE `happenings`
+  MODIFY `hapen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `profiles`
+--
+ALTER TABLE `profiles`
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `ratingworkers`
+--
+ALTER TABLE `ratingworkers`
+  MODIFY `rate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `reply`
+--
+ALTER TABLE `reply`
+  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT for table `uploadproof`
+--
+ALTER TABLE `uploadproof`
+  MODIFY `uploadproof_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
