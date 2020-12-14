@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip()
     $( "#modal_up" ).click(function() {
 
         $('#trigger_form_speak_modal').click();
