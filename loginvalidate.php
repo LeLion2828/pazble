@@ -67,9 +67,8 @@ if(!empty($_POST))
             header("Location: index.php?log=error");
 
             }
-
             elseif(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == null )
-            {
+            {     
 
                 header("location:setup.php"); //redirect to
             }

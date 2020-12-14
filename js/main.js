@@ -122,3 +122,12 @@ function form_valid (form){
 
     return true;
 }
+
+
+
+// new one
+
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
