@@ -9,7 +9,7 @@ $(document).ready(function(){
          console.log('whatsup');
     });
         $( "#profiles" ).click(function() {
-         window.location.href = "bossprofile.php";
+         window.location.href = "Profile-(Worker).php";
     });
         $( "#settings" ).click(function() {
          window.location.href = "settingClient.php";
