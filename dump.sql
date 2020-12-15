@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2020 at 09:15 PM
+-- Generation Time: Dec 15, 2020 at 09:46 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -137,31 +137,36 @@ CREATE TABLE `happenings` (
   `comments` varchar(255) DEFAULT NULL,
   `posted_time` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `raters` text
+  `raters` text,
+  `comment_post` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `happenings`
 --
 
-INSERT INTO `happenings` (`hapen_id`, `comments`, `posted_time`, `user_id`, `raters`) VALUES
-(1, 'hi guys', 'November 25, 2020, 7:02 pm', 1, NULL),
-(2, 'test', 'December 12, 2020, 4:56 am', 10, NULL),
-(3, 'ggggggg', 'December 12, 2020, 4:10 pm', 1, NULL),
-(4, 'tttttt', 'December 12, 2020, 4:10 pm', 1, NULL),
-(5, 'koko', 'December 12, 2020, 4:10 pm', 1, NULL),
-(6, 'pokli', 'December 12, 2020, 4:12 pm', 1, '{\"1\":1}'),
-(7, 'tgigig', 'December 12, 2020, 4:13 pm', 1, NULL),
-(8, 'asdasd', 'December 13, 2020, 12:34 am', 1, '{\"1\":1}'),
-(9, 'dhello', 'December 13, 2020, 12:36 am', 1, '{\"1\":1}'),
-(10, 'dhello', 'December 13, 2020, 12:37 am', 1, '{\"1\":1}'),
-(11, 'test', 'December 13, 2020, 12:39 am', 1, '{\"1\":1}'),
-(12, '3r2r3', 'December 13, 2020, 1:46 pm', 1, '{\"1\":1,\"25\":25}'),
-(13, 'skyad', 'December 13, 2020, 5:51 pm', 1, '{\"25\":25}'),
-(14, '3e', 'December 13, 2020, 6:06 pm', 1, '{\"25\":25}'),
-(15, 'wdq', 'December 13, 2020, 6:10 pm', 1, '{\"1\":1,\"25\":25}'),
-(16, 'this is a test to met dan database', 'December 13, 2020, 6:11 pm', 1, '{\"1\":1,\"25\":25}'),
-(17, 'helo', 'December 13, 2020, 8:33 pm', 25, '{\"25\":25}');
+INSERT INTO `happenings` (`hapen_id`, `comments`, `posted_time`, `user_id`, `raters`, `comment_post`) VALUES
+(1, 'hi guys', 'November 25, 2020, 7:02 pm', 1, NULL, ''),
+(2, 'test', 'December 12, 2020, 4:56 am', 10, NULL, ''),
+(3, 'ggggggg', 'December 12, 2020, 4:10 pm', 1, NULL, ''),
+(4, 'tttttt', 'December 12, 2020, 4:10 pm', 1, NULL, ''),
+(5, 'koko', 'December 12, 2020, 4:10 pm', 1, NULL, ''),
+(6, 'pokli', 'December 12, 2020, 4:12 pm', 1, '{\"1\":1}', ''),
+(7, 'tgigig', 'December 12, 2020, 4:13 pm', 1, NULL, ''),
+(8, 'asdasd', 'December 13, 2020, 12:34 am', 1, '{\"1\":1}', ''),
+(9, 'dhello', 'December 13, 2020, 12:36 am', 1, '{\"1\":1}', ''),
+(10, 'dhello', 'December 13, 2020, 12:37 am', 1, '{\"1\":1}', ''),
+(11, 'test', 'December 13, 2020, 12:39 am', 1, '{\"1\":1}', ''),
+(12, '3r2r3', 'December 13, 2020, 1:46 pm', 1, '{\"1\":1,\"25\":25}', ''),
+(13, 'skyad', 'December 13, 2020, 5:51 pm', 1, '{\"25\":25}', ''),
+(14, '3e', 'December 13, 2020, 6:06 pm', 1, '{\"25\":25}', ''),
+(15, 'wdq', 'December 13, 2020, 6:10 pm', 1, '{\"1\":1,\"25\":25}', ''),
+(16, 'this is a test to met dan database', 'December 13, 2020, 6:11 pm', 1, '{\"1\":1,\"25\":25}', ''),
+(17, 'helo', 'December 13, 2020, 8:33 pm', 25, '{\"25\":25}', ''),
+(18, 'hello tom', 'December 14, 2020, 12:42 pm', 1, '{\"1\":1}', ''),
+(19, 'ewffqe', 'December 15, 2020, 9:43 am', 1, '{\"1\":1}', NULL),
+(20, 'fresh test', 'December 15, 2020, 9:45 am', 1, '{\"1\":1}', NULL),
+(21, 'qdwqdwqwd', 'December 15, 2020, 9:46 am', 1, '{\"1\":1}', NULL);
 
 -- --------------------------------------------------------
 
@@ -283,7 +288,15 @@ INSERT INTO `reply` (`reply_id`, `reply_message`, `hapen_id`, `replyuserid`, `ti
 (42, 'waa korek', 16, 25, 'December 13, 2020, 8:35 pm'),
 (43, 'soupe', 17, 25, 'December 13, 2020, 8:35 pm'),
 (44, '', 3, 1, 'December 13, 2020, 9:09 pm'),
-(45, 'hello pokki', 6, 1, 'December 13, 2020, 9:09 pm');
+(45, 'hello pokki', 6, 1, 'December 13, 2020, 9:09 pm'),
+(46, 'hello', 17, 25, 'December 14, 2020, 5:24 pm'),
+(47, 'waaa', 17, 25, 'December 14, 2020, 5:26 pm'),
+(48, 'dw', 17, 25, 'December 14, 2020, 5:30 pm'),
+(49, 'waaa', 17, 25, 'December 14, 2020, 5:34 pm'),
+(50, 'uojp', 18, 1, 'December 14, 2020, 5:47 pm'),
+(51, 'waa korek ', 16, 1, 'December 14, 2020, 7:45 pm'),
+(52, 'dsved', 18, 1, 'December 15, 2020, 9:32 am'),
+(53, 'zx xz zz', 18, 1, 'December 15, 2020, 9:32 am');
 
 -- --------------------------------------------------------
 
@@ -339,7 +352,7 @@ INSERT INTO `users` (`user_id`, `Firstname`, `Lastname`, `countryCode`, `phone`,
 (9, 'test', 'testa', '+230', '59796708', '$2y$10$vchgTWGD4DFJSexzYXYi.uCTMnbpw.kByN.B/ub4iBaYLiMxhUnD6', 'client', 'userpic/9/5fd448df802537.19865902.jpg', 'Zc6jpD', 1),
 (10, 'Test', 'T', '+230', '59366706', '$2y$10$sN4o37S06PiFRxrEJQV5r.HCLUM3eTqxAYHe.J/vv2WMNf9FJ2j3y', 'worker', 'userpic/10/5fd44d557fc563.24661318.png', '7zGFZu', 1),
 (24, 'pills', 'boi', '+230', '57871179', '$2y$10$qig7L7y7a6Oy.igIv2mn9.tfR2mjmt52U3jBB.dGAH2TRCtFu5j2C', NULL, NULL, 'na5rU6', 0),
-(25, 'sky', 'test', '+230', '59072057', '$2y$10$zQKiSs.sd6BiLoxE0DD.eeMYIwf64k6eQcwZHpfvWqXfInNm.Y5zO', 'client', 'userpic/3/5fc0b98fcb2077.71481031.jpg', 'iIPqhi', 1);
+(25, 'sky', 'test', '+230', '59072057', '$2y$10$zQKiSs.sd6BiLoxE0DD.eeMYIwf64k6eQcwZHpfvWqXfInNm.Y5zO', 'worker', 'userpic/3/5fc0b98fcb2077.71481031.jpg', 'iIPqhi', 1);
 
 --
 -- Indexes for dumped tables
@@ -474,7 +487,7 @@ ALTER TABLE `forgetpwds`
 -- AUTO_INCREMENT for table `happenings`
 --
 ALTER TABLE `happenings`
-  MODIFY `hapen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `hapen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -498,7 +511,7 @@ ALTER TABLE `ratingworkers`
 -- AUTO_INCREMENT for table `reply`
 --
 ALTER TABLE `reply`
-  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `reply_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `uploadproof`
