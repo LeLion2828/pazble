@@ -2,6 +2,13 @@
 
     session_start();
 
+    if(!isset($_SESSION['user_id']))
+    {
+      header('Location:index.php?logplease');
+      die();
+    }
+
+
     $user = $_SESSION['user_id'] ;
     $firstName = $_SESSION['Fname'];
     $lastName = $_SESSION['Lname'];
@@ -704,7 +711,7 @@ textarea#message {
             'message': msg
           },
           success: function(data){
-            window.location.href = "Profile-(Worker).php";
+            window.location.href = "ProfileWorker.php";
           }
         });
 
@@ -780,7 +787,7 @@ textarea#message {
           }
         }
       });
-        window.location.href = "Profile-(Worker).php";
+        window.location.href = "ProfileWorker.php";
     });
     </script>
    <script type="text/javascript" src="js/changeToWorker.js"></script>

@@ -256,7 +256,7 @@ include ('workerheader.php');
 
 </script>
 
- <script type="text/javascript" src="js/changeType.js"></script>
+ <script type="text/javascript" src="js/changeToWorker.js"></script>
 
 
 </body>

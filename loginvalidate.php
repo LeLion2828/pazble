@@ -80,7 +80,7 @@ if(!empty($_POST))
             elseif(password_verify($passlog, $hashed_password) && $row['status_check'] == 1 && $row['usertype'] == 'worker')
             {
 
-                 header("location:newsfeedworker.php");
+                 header("location:speakerBoss.php");
             }
 
         }

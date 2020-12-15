@@ -34,7 +34,7 @@ if(!empty($_POST))
           //run parameters inside database
           mysqli_stmt_execute($stmt);
 
-          header('location:Profile-(Worker).php');
+          header('location:speakerBoss.php');
       	}
 
 }

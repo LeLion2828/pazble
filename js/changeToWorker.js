@@ -13,7 +13,7 @@
                   success: function(data){
                   console.log(data);
 
-                  location.href = 'workerprofile.php';
+                  location.href = 'speakerboss.php';
                 }
              });
 

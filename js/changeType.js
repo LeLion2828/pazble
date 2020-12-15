@@ -5,7 +5,7 @@ $(document).on("click",'#submiting',function(event){
       //console.log(worker);
 
       $.ajax({
-        url:'changeToBoss.php',
+        url:'changeToWorker.php',
         type:'post',
         data:{
           'client': client
@@ -13,7 +13,7 @@ $(document).on("click",'#submiting',function(event){
         success: function(data){
           console.log(data);
 
-          location.href = 'bossprofile.php';
+          location.href = 'newsfeedclient.php';
         }
       });
 

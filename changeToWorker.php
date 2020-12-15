@@ -6,10 +6,10 @@ require('db_config.php');
 
 $user = $_SESSION['user_id'] ;
 
-if(!empty($_POST['worker']))
+if(!empty($_POST['client']))
 {
  
-   $worker = mysqli_real_escape_string($conn,$_POST['worker']);
+   $worker = mysqli_real_escape_string($conn,$_POST['client']);
 
    $update = 'UPDATE users SET usertype = ? WHERE user_id = ?';
 

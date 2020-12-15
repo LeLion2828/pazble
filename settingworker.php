@@ -37,7 +37,7 @@ include ('workerheader.php');
 
                     <div class="col-md-4 text-center">
 
-                        <button type="submit" class="btn btn-success"  name='upload'>Change Profile pic</button>
+                        <button type="submit" class="btn btn-success"  name='upload'>upload</button>
 
                     </div>
 

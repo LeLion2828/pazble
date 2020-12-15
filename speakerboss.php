@@ -101,7 +101,9 @@
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
       <script class="u-script" type="text/javascript" src="bootstrap/bootstrap.min.js" defer=""></script>
       <script class="u-script" type="text/javascript" src="bootstrap/popper.min.js" defer=""></script>
-      <script class="u-script" type="text/javascript" src="js/modalup.js" defer=""></script>
+      <!-- <script class="u-script" type="text/javascript" src="js/modalup.js" defer=""></script> -->
+
+      <script class="u-script" type="text/javascript" src="js/modalupBoss.js" defer=""></script>
       
 
       <style type="text/css">
@@ -343,7 +345,7 @@ textarea#message {
       ?>
     </div>
     <p class="u-custom-font u-small-text u-text u-text-variant u-text-2"><?php echo '<span class="title"style="color:black;">'.$firstName.' '.$lastName.'</span>'; ?>
-    <p class="u-align-right u-custom-font u-small-text u-text u-text-custom-color-1 u-text-variant u-text-3" >Worker Mode
+    <p class="u-align-right u-custom-font u-small-text u-text u-text-custom-color-1 u-text-variant u-text-3" style="color: #c03a3a !important;">Boss Mode
       <span>
         <label class="switch">
           <input id="submiting"  type="checkbox" value="worker" checked>
@@ -732,6 +734,6 @@ textarea#message {
     });
     </script>
 
-    <script type="text/javascript" src="js/changeToWorker.js"></script>
+    <script type="text/javascript" src="js/changeType.js"></script>
 
     </html>
