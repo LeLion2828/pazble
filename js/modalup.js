@@ -12,7 +12,7 @@ $(document).ready(function(){
          window.location.href = "Profile-(Worker).php";
     });
         $( "#settings" ).click(function() {
-         window.location.href = "settingClient.php";
+         window.location.href = "profileworkerviewlist.php";
     });
         $( "#jobpage" ).click(function() {
          window.location.href = "job.php";
